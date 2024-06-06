@@ -68,7 +68,7 @@ public class IjkmPlayer extends IjkPlayer {
             if (path != null && !TextUtils.isEmpty(path)) {
                 if(path.startsWith("rtsp")){
                     mMediaPlayer.setOption(1, "infbuf", 1);
-                    mMediaPlayer.setOption(1, "rtsp_transport", "tcp");
+//                    mMediaPlayer.setOption(1, "rtsp_transport", "tcp");
                     mMediaPlayer.setOption(1, "rtsp_flags", "prefer_tcp");
                 } else if (!path.contains(".m3u8") && (path.contains(".mp4") || path.contains(".mkv") || path.contains(".avi"))) {
                     if (Hawk.get(HawkConfig.IJK_CACHE_PLAY, false)) {

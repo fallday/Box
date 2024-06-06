@@ -202,8 +202,8 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
 
                 try {
                     libLoader.loadLibrary("ijkffmpeg");
-                    libLoader.loadLibrary("ijksdl");
-                    libLoader.loadLibrary("ijkplayer");
+//                    libLoader.loadLibrary("ijksdl");
+                    libLoader.loadLibrary("a4ijkplayer");
                 } catch (Throwable throwable) {
 
                 }
@@ -219,7 +219,7 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
         synchronized (IjkMediaPlayer.class) {
             if (!mIsNativeInitialized) {
                 native_init();
-                IjkMediaPlayer.native_setDot(dotOpen ? dotPort : 0);
+//                IjkMediaPlayer.native_setDot(dotOpen ? dotPort : 0);
                 mIsNativeInitialized = true;
             }
         }
@@ -1378,7 +1378,7 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
     public static void toggleDotPort(boolean open) {
         dotOpen = open;
         if (mIsNativeInitialized) {
-            native_setDot(dotOpen ? dotPort : 0);
+//            native_setDot(dotOpen ? dotPort : 0);
         }
     }
 
@@ -1390,5 +1390,5 @@ public final class IjkMediaPlayer extends AbstractMediaPlayer {
 
     public static native void native_setReqLevel(int level);
 
-    public static native void native_setDot(int port);
+//    public static native void native_setDot(int port);
 }
